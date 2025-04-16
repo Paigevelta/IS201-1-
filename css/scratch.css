@@ -1,0 +1,62 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background: url('images/ocean-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #ffffff;
+  }
+  
+  nav {
+    background-color: rgba(0, 0, 50, 0.8);
+    padding: 1em;
+    text-align: center;
+  }
+  
+  nav a {
+    color: #00ffff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .hero {
+    background-color: rgba(0, 100, 100, 0.7);
+    text-align: center;
+    padding: 50px 20px;
+  }
+  
+  .section {
+    padding: 40px 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    margin: 20px;
+    border-radius: 12px;
+  }
+  
+  .featured-img {
+    width: 100%;
+    max-width: 600px;
+    display: block;
+    margin: 20px auto;
+    border: 5px solid #00ffff;
+  }
+  
+  h1, h2 {
+    color: #00ffff;
+  }
+  
+  /* Extra Styles */
+  ul, ol {
+    padding-left: 20px;
+  }
+  
+  iframe {
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .tableauPlaceholder {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  

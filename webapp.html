@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <a href="scratch.html" style="
+  display: inline-block;
+  background-color: #ff6f61;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 30px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 2px 4px 10px rgba(0,0,0,0.2);
+">
+  ⬅️ Back to Scratch Page
+</a>
+  <title>🎲 Odd or Even Game</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(135deg, #ffecd2, #fcb69f);
+      color: #333;
+      text-align: center;
+      padding: 50px;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+      color: #ff6f61;
+    }
+
+    .button-group {
+      margin: 20px 0;
+    }
+
+    button {
+      padding: 12px 24px;
+      margin: 10px;
+      font-size: 20px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      background-color: #fff;
+      color: #444;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #ffe0d9;
+      transform: scale(1.05);
+    }
+
+    .result {
+      margin-top: 30px;
+      font-size: 20px;
+      background: #fff9f4;
+      color: #444;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+      display: inline-block;
+      max-width: 500px;
+    }
+
+    #winner {
+      font-size: 28px;
+      margin-top: 15px;
+    }
+
+    .emoji {
+      font-size: 24px;
+      margin-right: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎲 Odd or Even?</h1>
+  <p>Pick <span class="emoji">🎯</span> Odd or Even, then a number between 1 and 5!</p>
+
+  <div class="button-group">
+    <button onclick="setChoice('Odd')">🧡 Odd</button>
+    <button onclick="setChoice('Even')">💙 Even</button>
+  </div>
+
+  <div class="button-group">
+    <p><strong>Choose Your Number:</strong></p>
+    <button onclick="playGame(1)">1️⃣</button>
+    <button onclick="playGame(2)">2️⃣</button>
+    <button onclick="playGame(3)">3️⃣</button>
+    <button onclick="playGame(4)">4️⃣</button>
+    <button onclick="playGame(5)">5️⃣</button>
+  </div>
+
+  <div class="result" id="resultBox">
+    <p><span class="emoji">🙋‍♀️</span><strong>Your choice:</strong> <span id="yourChoice">-</span></p>
+    <p><span class="emoji">🎲</span><strong>Your number:</strong> <span id="yourNumber">-</span></p>
+    <p><span class="emoji">🤖</span><strong>Computer's number:</strong> <span id="compNumber">-</span></p>
+    <p><span class="emoji">🧮</span><strong>Total:</strong> <span id="total">-</span></p>
+    <h2 id="winner">✨ Let’s play! ✨</h2>
+  </div>
+
+  <script>
+    let userOddEven = null;
+
+    function setChoice(choice) {
+      userOddEven = choice;
+      document.getElementById('yourChoice').innerText = choice + (choice === 'Odd' ? ' 🧡' : ' 💙');
+    }
+
+    function playGame(userNum) {
+      if (!userOddEven) {
+        alert("👋 Please pick Odd or Even first!");
+        return;
+      }
+
+      const compNum = Math.floor(Math.random() * 5) + 1;
+      const total = userNum + compNum;
+      const result = total % 2 === 0 ? "Even" : "Odd";
+
+      document.getElementById('yourNumber').innerText = userNum;
+      document.getElementById('compNumber').innerText = compNum;
+      document.getElementById('total').innerText = total;
+
+      if (result === userOddEven) {
+        document.getElementById('winner').innerText = "🎉 You Win! 🎊";
+      } else {
+        document.getElementById('winner').innerText = "💔 You Lose! 😢";
+      }
+    }
+  </script>
+
+</body>
+</html>
